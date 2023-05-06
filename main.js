@@ -2,6 +2,8 @@ const express = require('express')     //impoting express server to call bunch o
 const app = express()          //creating an instance (creating a object)
 const port = 3003
 
+app.use(express.json());
+
 const USERS = [];
 
 const QUESTIONS  = [
@@ -32,7 +34,7 @@ const SUBMISSIONS = [
 
 app.post('/signup', function(req, res) {     //route
     //add logic to decode body
-    app.use(express.json());
+    
     const { email, password} = req.body;
 
     //body should have email and password
